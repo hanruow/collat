@@ -1,0 +1,83 @@
+
+KeyCDN,AWS DNS
+MirrorImage,Dynect
+Zenedge,AWS DNS
+GoCache,AWS DNS
+section.io,nsone
+Netlify,nsone
+HiberniaCDN,Dynect
+Akamai,AkamaiDNS
+Akamai_China_CDN,AkamaiChina
+Limelight,LimelightDNS
+Edgecast,edgecastcdn
+Highwinds,hwcdn
+SimpleCDN,dnshound
+MirrorImage,Dynect
+Level3,footprint
+Yahoo,yahoo
+GoogleCDN,GoogleDNS
+InstartLogic,insnw
+Internap,internapcdn
+AmazonCloudFront,AWS DNS
+NetDNA,nsone
+NetDNA,AWS DNS
+KeyCDN,AWS DNS
+Cachefly,cachefly
+BO.LT,lovellsnames
+Cloudflare,CloudflareDNS
+afxcdn.net,afxcdn
+ChinaNetCenter,wscdns
+AT&T,GoDaddy
+MicrosoftAzure,azuredns-cloud
+VoxCDN,voxel
+BlueHatNetwork,AWS DNS
+SwiftCDN,swiftcdn1
+CDNetworks,cdngc
+Fastly,fastly
+Taobao,taobao
+MirrorImage,Dynect
+Yottaa,yottaa
+cubeCDN,cubecdn
+CDN77,cdn77
+Incapsula,incapdns
+BitGravity,bitgravity
+OnApp,worldcdn
+NGENIX,ngenix
+PageRain,pagerain
+ChinaCache,chinacache
+SFR,sfr
+Azion,azioncdn
+MediaCloud,cdncloud
+ReflectedNetworks,rncdn1
+CDNsun,cdnsun
+Medianova,mncdn
+jsDelivr,cedexis
+NYI_FTW,nyidns
+ReSRC.it,
+Zenedge,nsone
+Zenedge,Dynect
+LeaseWebCDN,lswcdn
+RevSoftware,nsone
+Caspowa,AWS DNS
+Twitter,twtrdns
+Twitter,Dynect
+Facebook,facebook
+Reapleaf,AWS DNS
+WordPress,automattic
+Aryaka,aads-cn
+section.io,nsone
+BisonGrid,bisongrid
+GoCache,AWS DNS
+HiberniaCDN,Dynect
+Telenor,Dynect
+Rackspace,RackspaceDns
+UnicornCDN,unicorndns
+OptimalCDN,optimalcdn
+KINXCDN,AWS DNS
+StackPath,nsone
+StackPath,AWS DNS
+Hosting4CDN,hosting4real
+Netlify,nsone
+Turbobytes,turbobytes
+Telefonica,telefonica
+Ananke,ananke
