@@ -460,6 +460,7 @@ def domain_cdn_dns(domain_cdn_fp, cdn_dns_fp, dns_collat_fp):
 def main(argv):
     # Parse command line arguments
     if len(sys.argv) < 3:
+        print "COMMANDS:\ndomain_dns\ndomain_ocsp\ndomain_cdn\ndomain_ocsp_dns\ndomain_ocsp_cdn\ndomain_cdn_dns"
         sys.exit("Usage: ./collat.py <command> <f1> <f2> [f3]")
 
     command = sys.argv[1]
