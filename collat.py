@@ -457,11 +457,63 @@ def domain_cdn_dns(domain_cdn_fp, cdn_dns_fp, dns_collat_fp):
     print "Domain CDN Failures: " + str(domain_cdn_dns_fail)
 
 
+def get_collat(fp, index, collat_d):
+    collat_file = open(fp)
+
+    for line in collat_file:
+        line = line.strip(',\n\r')
+        line = line.split(',')
+
+        rank = line[0]
+        domain = line[1]
+        collat = line[-1]
+
+        if not domain in collat_d:
+            collat_d[domain] = [rank,None,None,None,None,None,None]
+
+        collat_d[domain][index] = collat
+
+    collat_file.close()
+    return collat_d
+
+
+def combine(dns_collat_fp, ocsp_collat_fp, cdn_collat_fp,
+            ocsp_dns_collat_fp, ocsp_cdn_collat_fp, cdn_dns_collat_fp):
+
+    collat_d = {}
+
+    dns_collat = get_collat(dns_collat_fp, 1, collat_d)
+    ocsp_collat = get_collat(ocsp_collat_fp, 2, collat_d)
+    cdn_collat = get_collat(cdn_collat_fp, 3, collat_d)
+    ocsp_dns_collat = get_collat(ocsp_dns_collat_fp, 4, collat_d)
+    ocsp_cdn_collat = get_collat(ocsp_cdn_collat_fp, 5, collat_d)
+    cdn_dns_collat = get_collat(cdn_dns_collat_fp, 6, collat_d)
+
+    output_file = open("results/collat_combined", "w")
+
+    # Populate combined collat dictionary
+    for domain in collat_d:
+        val = collat_d[domain]
+
+        rank = val[0]
+        c1 = val[1]
+        c2 = val[2]
+        c3 = val[3]
+        c4 = val[4]
+        c5 = val[5]
+        c6 = val[6]
+
+        output_line = format_csvline(rank, domain, c1, c2, c3, c4, c5, c6)
+        output_file.write(output_line)
+
+    output_file.close()
+    
+
 def main(argv):
     # Parse command line arguments
     if len(sys.argv) < 3:
-        print "COMMANDS:\ndomain_dns\ndomain_ocsp\ndomain_cdn\ndomain_ocsp_dns\ndomain_ocsp_cdn\ndomain_cdn_dns"
-        sys.exit("Usage: ./collat.py <command> <f1> <f2> [f3]")
+        print "COMMANDS:\ndomain_dns\ndomain_ocsp\ndomain_cdn\ndomain_ocsp_dns\ndomain_ocsp_cdn\ndomain_cdn_dns\ncombine"
+        sys.exit("Usage: ./collat.py <command> <f1> <f2> [f3] ... [f6]")
 
     command = sys.argv[1]
     file1 = sys.argv[2]
@@ -469,6 +521,10 @@ def main(argv):
 
     try:
         file3 = sys.argv[4]
+        file4 = sys.argv[5]
+        file5 = sys.argv[6]
+        file6 = sys.argv[7]
+
     except:
         pass
 
@@ -498,6 +554,10 @@ def main(argv):
 
     elif command == "domain_cdn_dns":
         domain_cdn_dns(file1, file2, file3)
+
+    elif command == "combine":
+        combine(file1, file2, file3, file4, file5, file6)
+
 
     else:
         print "Unknown command."
